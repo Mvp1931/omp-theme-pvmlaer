@@ -38,17 +38,18 @@
                     "style": "diamond",
                     "background": "#0A0B0C",
                     "foreground": "#8543FA",
-                    "trailing_diamond": "\ue0b0",
+                    "trailing_diamond": " \ue0b0",
                     "properties": {
                         "branch_ahead_icon": "<#808CEC>\u21e1 </>",
                         "branch_behind_icon": "<#808CEC>\u21e3 </>",
-                        "branch_icon": "\ue725 ",
+                        "branch_icon": " \ue725 ",
                         "fetch_stash_count": true,
                         "fetch_status": true,
                         "fetch_upstream_icon": true,
-                        "github_icon": " \udb80\udea4 "
+                        "github_icon": " \udb80\udea4 ",
+                        "source": "cli"
                     },
-                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7>*</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#FFAFD7>*</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
                 }
             ]
         }
