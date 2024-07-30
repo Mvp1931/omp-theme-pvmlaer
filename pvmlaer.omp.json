@@ -4,6 +4,7 @@
         {
             "type": "prompt",
             "alignment": "left",
+            "newline": true,
             "segments": [
                 {
                     "type": "root",
@@ -58,21 +59,113 @@
             "alignment": "right",
             "segments": [
                 {
+                    "type": "docker",
+                    "style": "diamond",
+                    "foreground": "#031222",
+                    "background": "#105EEB",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\ue650 {{ .Context }} "
+                },
+                {
+                    "type": "npm",
+                    "style": "diamond",
+                    "foreground": "#FFFFFF",
+                    "background": "#FC1C1C",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\ue616 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "node",
+                    "style": "diamond",
+                    "foreground": "#6cd959",
+                    "background": "#0f1f0d",
+                    "leading_diamond": "\ue0b2",
+                    "properties": {
+                        "fetch_package_manager": true
+                    },
+                    "template": "\ued0d {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "bun",
+                    "style": "diamond",
+                    "foreground": "#FC9FC9",
+                    "background": "#170f13",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\udb83\udcd3 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "flutter",
+                    "style": "diamond",
+                    "foreground": "#072227",
+                    "background": "#06A4CE",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\u2131 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "dart",
+                    "style": "diamond",
+                    "foreground": "#06A3CE",
+                    "background": "#022646",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\ue64c {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "java",
+                    "style": "diamond",
+                    "foreground": "#EDBD0D",
+                    "background": "#072030",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\uedaf {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "python",
+                    "style": "diamond",
+                    "foreground": "#072030",
+                    "background": "#EDE707",
+                    "leading_diamond": "\ue0b2",
+                    "properties": {
+                        "display_mode": "files"
+                    },
+                    "template": "\ued1b {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+                },
+                {
+                    "type": "go",
+                    "style": "diamond",
+                    "foreground": "#10e3e3",
+                    "background": "#051f1f",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\udb81\udfd3 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+                },
+                {
                     "type": "text",
                     "style": "diamond",
-                    "foreground": "#ff1577",
-                    "background": "#1f030f",
-                    "leading_diamond": "\ue0b2",
-                    "template": " {{ .UserName }} "
+                    "foreground": "#FF1577",
+                    "background": "#1F030F",
+                    "leading_diamond" : "\ue0b2",
+                    "template": "{{ .UserName }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#FCFAF9",
+                    "background": "transparent",
+                    "template": "\u2771 "
                 }
             ]
         }
     ],
-    "final_space": true,
     "transient_prompt": {
         "background": "transparent",
         "foreground": "#FFFFFF",
         "template": "<#FACE0F>{{ .UserName }}</> {{ .Shell }} \ue691 "
     },
+    "final_space": true,
     "version": 2
 }
