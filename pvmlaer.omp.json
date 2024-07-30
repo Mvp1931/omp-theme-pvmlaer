@@ -59,6 +59,21 @@
             "alignment": "right",
             "segments": [
                 {
+                    "type": "status",
+                    "style": "diamond",
+                    "foreground": "#8EE00D",
+                    "background": "#090C0C",
+                    "leading_diamond": "\ue0b6",
+                    "trailing_diamond": "\ue0d6",
+                    "properties": {
+                        "always_enabled": true
+                    },
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#FF0000{{ end }}"
+                    ],
+                    "template": "{{ if gt .Code 0 }}\uf05c{{ else }}\uf05d{{ end }} "
+                },
+                {
                     "type": "docker",
                     "style": "diamond",
                     "foreground": "#031222",
@@ -141,8 +156,9 @@
                     "style": "diamond",
                     "foreground": "#FF1577",
                     "background": "#1F030F",
-                    "leading_diamond" : "\ue0b2",
-                    "template": "{{ .UserName }} "
+                    "leading_diamond": "\ue0b2",
+                    "trailing_diamond": "\ue0b4",
+                    "template": "{{ .UserName }}"
                 }
             ]
         },
@@ -152,11 +168,34 @@
             "newline": true,
             "segments": [
                 {
+                    "type": "time",
+                    "style": "plain",
+                    "foreground": "#FAA5EE",
+                    "background": "transparent",
+                    "properties": {
+                        "time_format": "Jan 2 15:04:05"
+                    },
+                    "template": "{{ .CurrentDate | date .Format }} "
+                },
+                {
+                    "type": "executiontime",
+                    "style": "plain",
+                    "alignment": "left",
+                    "foreground": "#FCF8CB",
+                    "background": "transparent",
+                    "properties": {
+                        "always_enabled": true,
+                        "threshold": 100,
+                        "style": "austin"
+                    },
+                    "template": "\udb81\udd1a {{ .FormattedMs }}"
+                },
+                {
                     "type": "text",
                     "style": "plain",
                     "foreground": "#FCFAF9",
                     "background": "transparent",
-                    "template": "\u2771 "
+                    "template": "\u2771"
                 }
             ]
         }
@@ -164,7 +203,7 @@
     "transient_prompt": {
         "background": "transparent",
         "foreground": "#FFFFFF",
-        "template": "<#FACE0F>{{ .UserName }}</> {{ .Shell }} \ue691 "
+        "template": "<#FACE0F>{{ .Shell }}</> \ue691 "
     },
     "final_space": true,
     "version": 2
