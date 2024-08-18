@@ -10,9 +10,74 @@
                     "foreground": "#AAECE2",
                     "background": "transparent",
                     "properties": {
-                        "time_format": "01/02->15:04"
+                        "time_format": "Jan 02 15:04"
                     },
-                    "template": " {{ .CurrentDate | date .Format }} <#FACE0F>\u276f</>"
+                    "template": "<#FACE0F>\u276e</> {{ .CurrentDate | date .Format }} "
+                },
+                {
+                    "type": "docker",
+                    "style": "plain",
+                    "foreground": "#105EEB",
+                    "background": "transparent",
+                    "template": "<#FACE0F>\u276e</> {{ .Context }} <#105EEB>\ue650</> "
+                },
+                {
+                    "type": "node",
+                    "style": "plain",
+                    "foreground": "#6CD959",
+                    "background": "transparent",
+                    "properties": {
+                        "fetch_package_manager": true
+                    },
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .PackageManagerIcon }}<#F00E0E>{{ .PackageManagerIcon }}</> {{ end }} {{ .Major }}.{{ .Minor }}{{ end }} <#6CD959>\ued0d</> "
+                },
+                {
+                    "type": "bun",
+                    "style": "plain",
+                    "foreground": "#FC9FC9",
+                    "background": "transparent",
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#FC9FC9>\udb83\udcd3</> "
+                },
+                {
+                    "type": "flutter",
+                    "style": "plain",
+                    "foreground": "#06A4CE",
+                    "background": "transparent",
+                    "properties": {
+                        "display_mode": "context"
+                    },
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Major }}.{{ .Minor }}{{ end }} <#06A4CE>\u2131</> "
+                },
+                {
+                    "type": "dart",
+                    "style": "plain",
+                    "foreground": "#06A3CE",
+                    "background": "transparent",
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Major }}.{{ .Minor }}{{ end }} <#06A3CE>\ue64c</> "
+                },
+                {
+                    "type": "java",
+                    "style": "plain",
+                    "foreground": "#0E52F0",
+                    "background": "transparent",
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Major }}.{{ .Minor }}{{ end }} <#F0700E>\uedaf</> "
+                },
+                {
+                    "type": "python",
+                    "style": "plain",
+                    "foreground": "#5AF00E",
+                    "background": "transparent",
+                    "properties": {
+                        "display_mode": "files"
+                    },
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }} \ued1b "
+                },
+                {
+                    "type": "go",
+                    "style": "plain",
+                    "foreground": "#10E3E3",
+                    "background": "transparent",
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Major }}.{{ .Minor }}{{ end }} \ue627 "
                 },
                 {
                     "type": "executiontime",
@@ -25,7 +90,7 @@
                         "threshold": 100,
                         "style": "austin"
                     },
-                    "template": "{{ .FormattedMs }}"
+                    "template": "<#FACE0F>\u276e</> {{ .FormattedMs }}"
                 }
             ]
         },
@@ -53,7 +118,7 @@
                     "style": "plain",
                     "foreground": "#9C77F2",
                     "background": "transparent",
-                    "template": "on {{ if .WSL }}WSL at {{ end }}{{ .Icon }} <#FACE0F>\u276f</>"
+                    "template": "on {{ if .WSL }}WSL at {{ end }}{{ .Icon }} ..."
                 },
                 {
                     "type": "git",
@@ -69,7 +134,38 @@
                         "github_icon": "",
                         "source": "cli"
                     },
-                    "template": " {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FACE0F> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}|{{ end }}{{ if .Staging.Changed }} <#EE0F5A>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} <#FACE0F>\u276f</>"
+                    "template": "<#FACE0F>\u276f</> {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <#FACE0F>|</>{{ end }}{{ if .Staging.Changed }} <#EE0F5A>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "#AAECE2",
+                    "background": "transparent",
+                    "properties": {
+                        "style": "agnoster",
+                        "folder_icon": ".."
+                    },
+                    "template": "<#FACE0F>\ueaf7</> {{ .Path }} "
+                },
+                {
+                    "type": "status",
+                    "style": "plain",
+                    "foreground": "#177ef3",
+                    "background": "transparent",
+                    "properties": {
+                        "always_enabled": true
+                    },
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}#EE0F5A{{ end }}"
+                    ],
+                    "template": "{{ if gt .Code 0 }}\u2771{{ else }}\u2771{{ end }}"
                 }
             ]
         }
