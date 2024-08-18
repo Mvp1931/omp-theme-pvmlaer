@@ -51,7 +51,7 @@
                         "github_icon": "",
                         "source": "cli"
                     },
-                    "template": " {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}|{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
+                    "template": " {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FACE0F> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}|{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
                 }
             ]
         }
