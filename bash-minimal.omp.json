@@ -2,7 +2,53 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "blocks": [
         {
-            "type": "rprompt",
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "root",
+                    "style": "plain",
+                    "foreground": "#EE0F5A",
+                    "background": "transparent",
+                    "template": " \u00bb "
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#AAECE2",
+                    "background": "transparent",
+                    "template": "{{ .UserName }}<#FACE0F>@</>{{ .HostName }} "
+                },
+                {
+                    "type": "os",
+                    "style": "plain",
+                    "foreground": "#9C77F2",
+                    "background": "transparent",
+                    "template": "on {{ if .WSL }}WSL at {{ end }}{{ .Icon }} ..."
+                },
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "foreground": "#AAECE2",
+                    "background": "transparent",
+                    "properties": {
+                        "branch_ahead_icon": "<#EE0F5A>\u2912 </>",
+                        "branch_behind_icon": "<#EE0F5A>\u2913 </>",
+                        "fetch_stash_count": true,
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "github_icon": "",
+                        "source": "cli"
+                    },
+                    "template": "<#FACE0F>\u276f</> {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <#FACE0F>|</>{{ end }}{{ if .Staging.Changed }} <#EE0F5A>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "right",
+            "overflow": "hide",
             "segments": [
                 {
                     "type": "time",
@@ -91,50 +137,6 @@
                         "style": "austin"
                     },
                     "template": "<#FACE0F>\u276e</> {{ .FormattedMs }}"
-                }
-            ]
-        },
-        {
-            "type": "prompt",
-            "alignment": "left",
-            "newline": true,
-            "segments": [
-                {
-                    "type": "root",
-                    "style": "plain",
-                    "foreground": "#EE0F5A",
-                    "background": "transparent",
-                    "template": " \u00bb "
-                },
-                {
-                    "type": "text",
-                    "style": "plain",
-                    "foreground": "#AAECE2",
-                    "background": "transparent",
-                    "template": "{{ .UserName }}<#FACE0F>@</>{{ .HostName }} "
-                },
-                {
-                    "type": "os",
-                    "style": "plain",
-                    "foreground": "#9C77F2",
-                    "background": "transparent",
-                    "template": "on {{ if .WSL }}WSL at {{ end }}{{ .Icon }} ..."
-                },
-                {
-                    "type": "git",
-                    "style": "plain",
-                    "foreground": "#AAECE2",
-                    "background": "transparent",
-                    "properties": {
-                        "branch_ahead_icon": "<#EE0F5A>\u2912 </>",
-                        "branch_behind_icon": "<#EE0F5A>\u2913 </>",
-                        "fetch_stash_count": true,
-                        "fetch_status": true,
-                        "fetch_upstream_icon": true,
-                        "github_icon": "",
-                        "source": "cli"
-                    },
-                    "template": "<#FACE0F>\u276f</> {{ .UpstreamIcon }}{{ .HEAD }} {{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7> *</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} <#FACE0F>|</>{{ end }}{{ if .Staging.Changed }} <#EE0F5A>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }}"
                 }
             ]
         },
