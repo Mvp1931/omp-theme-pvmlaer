@@ -82,7 +82,7 @@
                     "style": "plain",
                     "foreground": "#FC9FC9",
                     "background": "transparent",
-                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#FC9FC9>\udb83\udcd3</>"
+                    "template": "<#FACE0F>\u276e</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} <#FC9FC9>\u2660</> "
                 },
                 {
                     "type": "flutter",
