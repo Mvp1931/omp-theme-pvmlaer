@@ -150,14 +150,15 @@
                     "background": "transparent",
                     "properties": {
                         "style": "agnoster",
-                        "folder_icon": ".."
+                        "folder_icon": "..",
+                        "home_icon": " \uedc8 "
                     },
                     "template": "<#FACE0F>\ueaf7</> {{ .Path }} "
                 },
                 {
                     "type": "status",
                     "style": "plain",
-                    "foreground": "#177ef3",
+                    "foreground": "#5AF00E",
                     "background": "transparent",
                     "properties": {
                         "always_enabled": true
@@ -165,7 +166,7 @@
                     "foreground_templates": [
                         "{{ if gt .Code 0 }}#EE0F5A{{ end }}"
                     ],
-                    "template": "{{ if gt .Code 0 }}\u2771{{ else }}\u2771{{ end }}"
+                    "template": "{{ if gt .Code 0 }}\uf00d{{ else }}\uf00c {{ end }}"
                 }
             ]
         }
