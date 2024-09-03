@@ -18,7 +18,7 @@
 2. Unzip the _.zip_ file.
 3. Copy the `...omp.json` files in this folder to the oh-my-posh themes folder.
     - On Windows 11/10, this is
-    ```cmd
+    ```powershell
     %LOCALAPPDATA%\Programs\oh-my-posh\themes\
     ```
     - On Linux, this is
