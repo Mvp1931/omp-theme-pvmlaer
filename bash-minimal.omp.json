@@ -151,9 +151,10 @@
                     "foreground": "#AAECE2",
                     "background": "transparent",
                     "properties": {
-                        "style": "agnoster",
-                        "folder_icon": "..",
-                        "home_icon": " \uedc8 "
+                        "style": "agnoster_short",
+                        "folder_icon": "\uf0a8 ",
+                        "home_icon": " \uedc8 ",
+                        "max_depth": 1
                     },
                     "template": "<#FACE0F>\ueaf7</> {{ .Path }} "
                 },
