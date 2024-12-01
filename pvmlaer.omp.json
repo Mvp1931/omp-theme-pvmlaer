@@ -79,7 +79,7 @@
                     "foreground": "#2A2A2A",
                     "background": "#4F3CBC",
                     "leading_diamond": "\ue0b2",
-                    "template": "\udb82\udc33 {{ .Context }}{{ if .Namespace }}::{{ .Namespace }}{{ end }} "
+                    "template": "\u273D {{ .Context }}{{ if .Namespace }}::{{ .Namespace }}{{ end }} "
                 },
                 {
                     "type": "docker",

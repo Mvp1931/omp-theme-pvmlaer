@@ -65,7 +65,7 @@
                     "style": "plain",
                     "foreground": "#4F3CBC",
                     "background": "transparent",
-                    "template": "<#FACE0F>\u276e</> {{ .Context }}{{ if .Namespace }}::{{ .Namespace }}{{ end }} \udb82\udc33 "
+                    "template": "<#FACE0F>\u276e</> {{ .Context }}{{ if .Namespace }}::{{ .Namespace }}{{ end }} <#4F3CBC>\u273D</> "
                 },
                 {
                     "type": "docker",
