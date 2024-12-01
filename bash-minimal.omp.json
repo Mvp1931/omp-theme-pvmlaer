@@ -151,8 +151,8 @@
                     "foreground": "#AAECE2",
                     "background": "transparent",
                     "properties": {
-                        "style": "agnoster_short",
-                        "folder_icon": "\uf0a8 ",
+                        "style": "agnoster",
+                        "folder_icon": "..",
                         "home_icon": " \uedc8 ",
                         "max_depth": 1
                     },
