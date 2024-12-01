@@ -74,6 +74,14 @@
                     "template": "{{ if gt .Code 0 }}\uf05c{{ else }}\uf05d{{ end }} "
                 },
                 {
+                    "type": "kubectl",
+                    "style": "diamond",
+                    "foreground": "#2A2A2A",
+                    "background": "#4F3CBC",
+                    "leading_diamond": "\ue0b2",
+                    "template": "\udb82\udc33 {{ .Context }}{{ if .Namespace }}::{{ .Namespace }}{{ end }} "
+                },
+                {
                     "type": "docker",
                     "style": "diamond",
                     "foreground": "#031222",
